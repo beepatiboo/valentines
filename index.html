@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Game 💖</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- START SCREEN -->
+    <div id="start-screen" class="screen active">
+        <div class="content">
+            <h1 class="title">Catch My Heart</h1>
+            <svg width="50" height="50" viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg">
+            <path d="M25,45 C25,45 5,30 5,17 C5,10 10,5 16,5 C20,5 23,7 25,10 C27,7 30,5 34,5 C40,5 45,10 45,17 C45,30 25,45 25,45 Z" 
+                  fill="#ffb3ba" 
+                  stroke="#d84a4a" 
+                  stroke-width="2"
+                  stroke-linejoin="round"/>
+            </svg>
+            <p class="instructions">Catch the falling hearts to reveal a special message!</p>
+            <p class="instructions">Use ← → arrow keys to move the basket</p>
+            
+            <div class="speed-control">
+                <label for="speed-slider">Game Speed:</label>
+                <input type="range" id="speed-slider" min="1" max="5" value="3" step="1">
+                <div class="speed-labels">
+                    <span>Slow</span>
+                    <span>Medium</span>
+                    <span>Fast</span>
+                </div>
+            </div>
+            
+            <button id="start-btn" class="btn">Start Game</button>
+        </div>
+    </div>
+
+    <!-- GAME SCREEN -->
+    <div id="game-screen" class="screen">
+        <div class="game-header">
+            <div class="score">Hearts Caught: <span id="score">0</span></div>
+            <button id="pause-btn" class="btn btn-pause">⏸️ Pause</button>
+        </div>
+
+        <!-- Progress Display -->
+        <div id="progress-display" class="progress">
+            <span class="letter-slot" data-letter="W">_</span>
+            <span class="letter-slot" data-letter="I">_</span>
+            <span class="letter-slot" data-letter="L">_</span>
+            <span class="letter-slot" data-letter="L">_</span>
+            <span class="space"></span>
+            <span class="letter-slot" data-letter="Y">_</span>
+            <span class="letter-slot" data-letter="O">_</span>
+            <span class="letter-slot" data-letter="U">_</span>
+            <span class="space"></span>
+            <span class="letter-slot" data-letter="B">_</span>
+            <span class="letter-slot" data-letter="E">_</span>
+            <span class="space"></span>
+            <span class="letter-slot" data-letter="M">_</span>
+            <span class="letter-slot" data-letter="Y">_</span>
+            <span class="space"></span>
+            <span class="letter-slot" data-letter="V">_</span>
+            <span class="letter-slot" data-letter="A">_</span>
+            <span class="letter-slot" data-letter="L">_</span>
+            <span class="letter-slot" data-letter="E">_</span>
+            <span class="letter-slot" data-letter="N">_</span>
+            <span class="letter-slot" data-letter="T">_</span>
+            <span class="letter-slot" data-letter="I">_</span>
+            <span class="letter-slot" data-letter="N">_</span>
+            <span class="letter-slot" data-letter="E">_</span>
+        </div>
+
+        <!-- Letter Caught Message -->
+        <div id="letter-message" class="letter-message"></div>
+
+        <!-- Game Canvas -->
+        <div id="game-canvas">
+            <!-- Hearts will be spawned here -->
+            <div id="basket" class="basket">
+                <svg width="100" height="60" viewBox="0 0 100 60" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M10,10 L50,40 L90,10 L90,50 L10,50 Z" fill="#fff" stroke="#8b4513" stroke-width="3"/>
+                    <path d="M10,10 L50,40 L90,10" fill="none" stroke="#8b4513" stroke-width="3"/>
+                </svg>
+            </div>
+        </div>
+    </div>
+
+    <!-- REVEAL SCREEN -->
+    <div id="reveal-screen" class="screen">
+        <div class="content reveal-content">
+            <h1 class="reveal-message">Will You Be My Valentine?</h1>
+            <div class="button-group">
+                <button id="yes-btn" class="btn btn-yes">Yes!</button>
+                <button id="no-btn" class="btn btn-no">No</button>
+            </div>
+            <button id="play-again-btn" class="btn btn-secondary">Play Again</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
