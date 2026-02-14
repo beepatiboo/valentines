@@ -429,7 +429,7 @@ function updateBasketPosition() {
 
 // Reveal screen buttons
 yesBtn.addEventListener('click', () => {
-    alert('Yay! 💖💖💖 You made my day!');
+    alert('Yay! 💖💖💖 See you tonight at Kinoya 8:00 PM!');
 });
 
 noBtn.addEventListener('click', () => {
